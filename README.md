@@ -24,6 +24,12 @@ delete มี 2 method
     DeleteOne(ctx context.Context, filter interface{}, opts ...*options.DeleteOptions) (*mongo.DeleteResult, error)
     DeleteMany(ctx context.Context, filter interface{}, opts ...*options.DeleteOptions) (*mongo.DeleteResult, error)
 
+---
+
+Data Types BSON 
+
+https://www.mongodb.com/docs/drivers/go/current/fundamentals/bson
+
 bson.D{} ตัวอย่างใน doc เค้าใช้ , คั่นระหว่าง Key-Value 
     
     bson.D{{"foo", "bar"}, {"hello", "world"}, {"pi", 3.14159}}
@@ -42,7 +48,10 @@ bson.D{} ตัวอย่างใน doc เค้าใช้ , คั่น
 	update := bson.D{{Key: "$set", Value: bson.D{{Key: "completed", Value: true}}}}
 
 
-refer: https://www.mongodb.com/docs/drivers/go/current/quick-start/
+ตัวอย่างการเริ่มเขียน golang กับ mongo: https://www.mongodb.com/docs/drivers/go/current/quick-start/
+
+โค้ดตัวอย่าง หลักๆจะอยู่ใน code-snippets (จะเจอโค้ดส่วนอื่นๆอีก update, delete etc..): 
+https://github.com/mongodb/docs-golang/blob/master/source/includes/usage-examples/code-snippets/find.go
 
 ---
 
